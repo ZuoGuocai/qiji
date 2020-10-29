@@ -24,4 +24,6 @@ find .  -name "metricsdb*"  -exec rm {} \;
     
     systemd-cgtop 
 
+    CRI-O(Container Runtime Interface Orchestrator) 是一个轻量级的，专门对Kubernetes 进行优化的容器运行时环境
+
 ```
