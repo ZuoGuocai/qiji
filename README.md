@@ -17,6 +17,9 @@ find .  -name "metricsdb*"  -exec rm {} \;
 
 3.   Linux 上从 NetworkManager 切换为 systemd-network
 
-    docker ，，，systemd  cgroup
+    docker systemd  cgroup
+    
+    更改设置，令容器运行时和 kubelet 使用 systemd 作为 cgroup 驱动，以此使系统更为稳定。 请注意在 docker 下设置 native.cgroupdriver=systemd 选项
+    https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/
 
 ```
