@@ -32,3 +32,30 @@ find .  -name "metricsdb*"  -exec rm {} \;
 rm -- -mapping.json
 
 ```
+
+
+
+5.  benchmark
+
+
+```
+
+sysbench /usr/share/sysbench/oltp_read_write.lua  --table-size=10000 --db-driver=mysql --mysql-host=10.252.4.52 --mysql-port=3306 --mysql-user=root --mysql-password=rootroot --mysql-db=sysbench --threads=10 --tables=10 --events=100000 --time=10 prepare
+
+
+sysbench /usr/share/sysbench/oltp_read_write.lua  --table-size=10000 --db-driver=mysql --mysql-host=10.252.3.86 --mysql-port=3306 --mysql-user=root --mysql-password=rootroot --mysql-db=sysbench --threads=10 --tables=10 --events=100000 --time=10 run
+
+
+sysbench /usr/share/sysbench/oltp_read_write.lua  --table-size=10000 --db-driver=mysql --mysql-host=10.252.3.86 --mysql-port=3306 --mysql-user=root --mysql-password=rootroot --mysql-db=sysbench --threads=10 --tables=10 --events=100000 --time=10 --rand-type=uniform cleanup
+
+
+
+
+
+redis-benchmark -c 50 -n 10000000 -d 10 -k 1 -r 10000 -P 100 -t get
+redis-benchmark -c 50 -n 1000000 -d 10 -k 1 -r 10000 -P 1 -t get
+
+redis-benchmark –h 10.252.5.68-c 50 -n 10000000 -d 10 -k 1 -r 10000 -P 100 -t get
+redis-benchmark –h 10.252.5.68 -c 50 -n 10000000 -d 10 -k 1 -r 10000 -P 1 -t get
+
+```
