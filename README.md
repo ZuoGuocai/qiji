@@ -33,9 +33,15 @@ rm -- -mapping.json
 
 ```
 
+5. 
+```
+cat /proc/sys/kernel/random/uuid
 
 
-5.  benchmark
+```
+
+
+6.  benchmark
 
 
 ```
