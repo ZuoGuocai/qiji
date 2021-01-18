@@ -15,6 +15,10 @@ xshell中的复制即“复制会话”；复制ssh渠道即“复制socket通�
 find .  -name "metricsdb*"  -exec rm {} \;
 
 
+只列出目录
+ls -d /etc/*/
+
+
 3.   Linux 上从 NetworkManager 切换为 systemd-network
 
     docker systemd  cgroup
