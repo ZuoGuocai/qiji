@@ -69,3 +69,14 @@ redis-benchmark –h 10.252.5.68-c 50 -n 10000000 -d 10 -k 1 -r 10000 -P 100 -t 
 redis-benchmark –h 10.252.5.68 -c 50 -n 10000000 -d 10 -k 1 -r 10000 -P 1 -t get
 
 ```
+
+
+7.  删除特殊字符名称的文件
+
+
+```
+ls -i
+find  -inum 265391 -exec rm -rf {} \;
+
+
+```
